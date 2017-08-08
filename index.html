@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title> Sentiment Analysis Correlation</title>
+	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Sentiment Analysis</h1>
+	    <svg id="visualization"></svg>
+		<h3> Introduction </h3>
+	    <p> This web page is an experiment in D3.js, and to determine whether the headlines of several popular newspapers are a good metric for measuring stock market performance. </p>
+	    <h3> Method </h3>
+	    <p> Using the <a href="https://newsapi.org/"> Headlines API on NewsApi.org </a>. I got the headlines from Bloomberg, Business Insider, the Financial Times, Fortune, the Economist, and the Wall Street Journal, all the business oriented news institutions that were available through the API. I then ran these headlines through the Python sentiment analysis library TextBlob, and calculated a simple average of the sentiments of the headlines for the day. These values were then correlated with the percentage change of the market for the day. </p>
+	    
+	    <p> To determine the causal effect of the headline sentiment on the market performance, I recorded the sentiment twice a day: once at market open at 9 AM EST, and once at market close, at 3 PM EST. Also, since I could not find any free APIs with the market percentage included, I calculated the </p>
+	</div>
+	<!-- Code and stuff goes below here -->
+	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+	<script>
+		var svg = d3.select("svg");
+    svg.attr("height", 50).attr("width", 50).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
+	</script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
